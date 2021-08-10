@@ -1,30 +1,21 @@
 //应用程序开发人员
-class Application{
-public:
-	bool Step2(){
-		//...
-    }
+class Application : public Library{
+	public:
+		
+		virtual bool step2(){
+			//...
+		}
 
-    void Step4(){
-		//...
-    }
+		virtual void step4(){
+			//...
+		}
+
 };
 
 int main()
 {
-	Library lib();
-	Application app();
+	Library app = new Application();
+	app->run();
 
-	lib.Step1();
-
-	if (app.Step2()){
-		lib.Step3();
-	}
-
-	for (int i = 0; i < 4; i++){
-		app.Step4();
-	}
-
-	lib.Step5();
-
+	delete app;	
 }
